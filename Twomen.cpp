@@ -212,3 +212,8 @@ void Twomen::saveToFileCalorie()
     file << firstName << ' ' << lastName << ' ' << age << ' ' << height << ' ' << weight << ' ' << act << ' ' << calorie << '\n';
     file.close();
 }
+
+Twomen::~Twomen()
+{
+    cout << "Dziala destruktor klasy Twomen\n";
+}

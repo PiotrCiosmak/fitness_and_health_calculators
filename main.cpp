@@ -13,3 +13,8 @@ int main()
         menu.menuSelection();
     }
 }
+
+//srednia bmi
+//srednia cal
+//gdy mamy niedowage to pokazuje inne rzeczy po obliczeniu kalorii
+//obliczanie makro składników

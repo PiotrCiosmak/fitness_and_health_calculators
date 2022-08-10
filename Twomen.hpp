@@ -14,7 +14,7 @@ public:
 
     Twomen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
 
-    virtual void create() override;
+    void create() override;
 
     void calculateBMI() override;
 
@@ -23,6 +23,8 @@ public:
     std::string getFirstName() override;
 
     std::string getLastName() override;
+
+    ~Twomen() override;
 
 private:
     void saveToFileBMI() override;

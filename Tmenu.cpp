@@ -78,7 +78,6 @@ void Tmenu::menuSelection()
             cout << "Nie ma takiej opcji!!!\n"
                     "Sprobuj ponownie" << endl;
     }
-
 }
 
 void Tmenu::screenClear()
@@ -87,8 +86,8 @@ void Tmenu::screenClear()
     cout << string(26, '\n');
 }
 
-/*Tmenu::~Tmenu()
+Tmenu::~Tmenu()
 {
     if (p != nullptr)
         delete p;
-}*/
+}

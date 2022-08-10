@@ -14,15 +14,19 @@ public:
 
     Tmen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
 
-    virtual void create() override;
+    void create() override;
 
     void calculateBMI() override;
 
     void calculateCalorie() override;
 
-    std::string getFirstName();
+    static void calculateAvgBMI();
 
-    std::string getLastName();
+    std::string getFirstName() override;
+
+    std::string getLastName() override;
+
+    ~Tmen() override;
 
 private:
     void saveToFileBMI() override;

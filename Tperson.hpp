@@ -6,6 +6,7 @@
 #define BMI_CALCULATOR_TPERSON_HPP
 
 #include <iostream>
+#include <vector>
 
 class Tperson
 {
@@ -24,7 +25,11 @@ public:
     virtual std::string getFirstName() = 0;
 
     virtual std::string getLastName() = 0;
-    //virtual ~Tperson() = 0;
+
+    virtual ~Tperson()
+    {
+        std::cout << "Dziala destruktor klasy Tperson\n";
+    }
 
 protected:
     virtual void saveToFileBMI() = 0;
@@ -40,6 +45,7 @@ protected:
     activity act;
     double bmi;
     int calorie;
+    static vector<double> bmiArray;
 };
 
 

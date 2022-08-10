@@ -215,5 +215,7 @@ void Tmen::saveToFileCalorie()
     file.close();
 }
 
-
-
+Tmen::~Tmen()
+{
+    cout << "Dziala destruktor klasy Tmen\n";
+}

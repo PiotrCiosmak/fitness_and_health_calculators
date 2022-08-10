@@ -21,7 +21,7 @@ public:
 
     void screenClear();
 
-    //~Tmenu();
+    ~Tmenu();
 private:
     Tperson *p;
 };
