@@ -67,6 +67,8 @@ void Tmenu::menuSelection()
             break;
         case '3':
             cout << "TODO3";
+            //static_cast<Tmen *>(p)->calculateAvgBMI();
+            //Twomen::calculateAvgBMI();
             break;
         case '4':
             cout << "TODO4";
@@ -89,5 +91,8 @@ void Tmenu::screenClear()
 Tmenu::~Tmenu()
 {
     if (p != nullptr)
+    {
         delete p;
+        p = nullptr;
+    }
 }

@@ -6,6 +6,7 @@
 #define FITNESS_AND_HEALTH_CALCULATORS_TMEN_HPP
 
 #include "Tperson.hpp"
+#include <vector>
 
 class Tmen final : public Tperson
 {
@@ -19,8 +20,6 @@ public:
     void calculateBMI() override;
 
     void calculateCalorie() override;
-
-    static void calculateAvgBMI();
 
     std::string getFirstName() override;
 

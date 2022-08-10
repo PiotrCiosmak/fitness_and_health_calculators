@@ -19,7 +19,7 @@ public:
 
     void menuSelection();
 
-    void screenClear();
+    static void screenClear();
 
     ~Tmenu();
 private:

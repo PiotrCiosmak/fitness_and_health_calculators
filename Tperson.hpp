@@ -6,7 +6,6 @@
 #define BMI_CALCULATOR_TPERSON_HPP
 
 #include <iostream>
-#include <vector>
 
 class Tperson
 {
@@ -45,7 +44,6 @@ protected:
     activity act;
     double bmi;
     int calorie;
-    static vector<double> bmiArray;
 };
 
 
