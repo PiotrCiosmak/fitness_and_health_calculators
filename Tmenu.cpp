@@ -71,7 +71,7 @@ void Tmenu::menuSelection()
             break;
         case '4':
             Tmen::calculateAvgCalorie();
-            //Twomen::calculateAvgCalorie();
+            Twomen::calculateAvgCalorie();
             break;
         case '0':
             cout << "Opuszczanie programu";
