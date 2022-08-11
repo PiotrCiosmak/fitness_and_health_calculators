@@ -35,7 +35,7 @@ void Tmenu::startMenuSelection()
                     "Sprobuj ponownie" << endl;
     }
     screenClear();
-    p->create();
+    //p->create();
 }
 
 void Tmenu::drawMenu()
@@ -66,9 +66,8 @@ void Tmenu::menuSelection()
             p->calculateCalorie();
             break;
         case '3':
-            cout << "TODO3";
-            //static_cast<Tmen *>(p)->calculateAvgBMI();
-            //Twomen::calculateAvgBMI();
+            Tmen::calculateAvgBMI();
+            Twomen::calculateAvgBMI();
             break;
         case '4':
             cout << "TODO4";

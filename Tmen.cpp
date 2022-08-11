@@ -184,6 +184,47 @@ void Tmen::calculateCalorie()
     saveToFileCalorie();
 }
 
+void Tmen::calculateAvgBMI()
+{
+    ifstream file("men_BMI_history.txt", ios::in);
+    if (!file)
+    {
+        cout << "Blad otwarcia pliku!!!";
+        exit(-1);
+    }
+
+    string line;
+    double sum{};
+    int counter{};
+    while (getline(file, line), !line.empty())
+    {
+        sum += stod(line.substr(line.rfind(' ')));
+        counter++;
+    }
+    cout << "Srednie BMI dla mezczyzn wynosi: " << sum / counter << endl;
+    file.close();
+}
+
+void Tmen::calculateAvgCalorie()
+{
+    ifstream file("men_calorie_history.txt", ios::in);
+    if (!file)
+    {
+        cout << "Blad otwarcia pliku!!!";
+        exit(-1);
+    }
+
+    string line;
+    double sum{};
+    int counter{};
+    while (getline(file, line), !line.empty())
+    {
+        sum += stod(line.substr(line.rfind(' ')));
+        counter++;
+    }
+    cout << "Srednie zapotrzebowanie kaloryczne dla mezczyzn wynosi: " << sum / counter << endl;
+    file.close();
+}
 
 string Tmen::getFirstName()
 {

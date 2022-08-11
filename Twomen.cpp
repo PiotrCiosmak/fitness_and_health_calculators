@@ -182,6 +182,48 @@ void Twomen::calculateCalorie()
     saveToFileCalorie();
 }
 
+void Twomen::calculateAvgBMI()
+{
+    ifstream file("women_BMI_history.txt", ios::in);
+    if (!file)
+    {
+        cout << "Blad otwarcia pliku!!!";
+        exit(-1);
+    }
+
+    string line;
+    double sum{};
+    int counter{};
+    while (getline(file, line), !line.empty())
+    {
+        sum += stod(line.substr(line.rfind(' ')));
+        counter++;
+    }
+    cout << "Srednie BMI dla kobiet wynosi: " << sum / counter << endl;
+    file.close();
+}
+
+void Twomen::calculateAvgCalorie()
+{
+    ifstream file("women_calorie_history.txt", ios::in);
+    if (!file)
+    {
+        cout << "Blad otwarcia pliku!!!";
+        exit(-1);
+    }
+
+    string line;
+    double sum{};
+    int counter{};
+    while (getline(file, line), !line.empty())
+    {
+        sum += stod(line.substr(line.rfind(' ')));
+        counter++;
+    }
+    cout << "Srednie zapotrzebowanie kaloryczne dla kobiet wynosi: " << sum / counter << endl;
+    file.close();
+}
+
 string Twomen::getFirstName()
 {
     return firstName;

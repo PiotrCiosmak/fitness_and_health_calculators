@@ -6,6 +6,7 @@
 #define BMI_CALCULATOR_TPERSON_HPP
 
 #include <iostream>
+#include <vector>
 
 class Tperson
 {

@@ -21,6 +21,10 @@ public:
 
     void calculateCalorie() override;
 
+    static void calculateAvgBMI();
+
+    static void calculateAvgCalorie();
+
     std::string getFirstName() override;
 
     std::string getLastName() override;
