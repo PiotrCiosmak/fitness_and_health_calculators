@@ -199,7 +199,7 @@ void Twomen::calculateAvgBMI()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie BMI dla kobiet wynosi: " << sum / counter << endl;
+    cout << "Srednie BMI dla kobiet wynosi: " << fixed << setprecision(2) << sum / counter << endl;
     file.close();
 }
 
@@ -220,7 +220,7 @@ void Twomen::calculateAvgCalorie()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie zapotrzebowanie kaloryczne dla kobiet wynosi: " << sum / counter << endl;
+    cout << "Srednie zapotrzebowanie kaloryczne dla kobiet wynosi: " << fixed << setprecision(0) << sum / counter << endl;
     file.close();
 }
 

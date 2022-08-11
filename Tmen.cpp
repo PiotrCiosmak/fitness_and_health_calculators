@@ -201,7 +201,7 @@ void Tmen::calculateAvgBMI()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie BMI dla mezczyzn wynosi: " << sum / counter << endl;
+    cout << "Srednie BMI dla mezczyzn wynosi: " << fixed << setprecision(2) << sum / counter << endl;
     file.close();
 }
 
@@ -222,7 +222,7 @@ void Tmen::calculateAvgCalorie()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie zapotrzebowanie kaloryczne dla mezczyzn wynosi: " << sum / counter << endl;
+    cout << "Srednie zapotrzebowanie kaloryczne dla mezczyzn wynosi: " << fixed << setprecision(0) << sum / counter << endl;
     file.close();
 }
 
