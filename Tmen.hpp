@@ -15,8 +15,6 @@ public:
 
     Tmen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
 
-    void create() override;
-
     void calculateBMI() override;
 
     void calculateCalorie() override;
@@ -25,9 +23,7 @@ public:
 
     static void calculateAvgCalorie();
 
-    std::string getFirstName() override;
-
-    std::string getLastName() override;
+    void calculateMacronutrients() override;
 
     ~Tmen() override;
 

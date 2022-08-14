@@ -2,6 +2,7 @@
 #include "Tperson.hpp"
 #include "Tmenu.hpp"
 #include "Tmen.hpp"
+
 int main()
 {
     Tmenu menu;
@@ -14,5 +15,4 @@ int main()
     }
 }
 
-//srednia cal
 //obliczanie makro składników

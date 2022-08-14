@@ -23,7 +23,7 @@ public:
 
     ~Tmenu();
 private:
-    Tperson *p;
+    Tperson *p = nullptr;
 };
 
 

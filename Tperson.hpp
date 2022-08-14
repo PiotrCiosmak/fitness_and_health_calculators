@@ -16,15 +16,22 @@ public:
         sedentary, light, active, veryActive, extraActive
     };
 
-    virtual void create() = 0;
+    enum diet
+    {
+        sport, keto, reductive, standard, vegan, vegetarian
+    };
+
+    void create();
+
+    std::string getFirstName();
+
+    std::string getLastName();
 
     virtual void calculateBMI() = 0;
 
     virtual void calculateCalorie() = 0;
 
-    virtual std::string getFirstName() = 0;
-
-    virtual std::string getLastName() = 0;
+    virtual void calculateMacronutrients() = 0;
 
     virtual ~Tperson()
     {
@@ -36,7 +43,6 @@ protected:
 
     virtual void saveToFileCalorie() = 0;
 
-protected:
     std::string firstName;
     std::string lastName;
     int age;
@@ -45,6 +51,10 @@ protected:
     activity act;
     double bmi;
     int calorie;
+    diet dietType;
+    int protein;
+    int carbo;
+    int fat;
 };
 
 

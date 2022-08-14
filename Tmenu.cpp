@@ -21,19 +21,22 @@ void Tmenu::drawStartMenu()
 void Tmenu::startMenuSelection()
 {
     char option;
-    cin >> option;
-    switch (tolower(option))
+    do
     {
-        case 'm':
-            p = new Tmen;
-            break;
-        case 'k':
-            p = new Twomen;
-            break;
-        default:
-            cout << "Wybrana plec nie jest poprawna!!!\n"
-                    "Sprobuj ponownie" << endl;
-    }
+        cin >> option;
+        switch (tolower(option))
+        {
+            case 'm':
+                p = new Tmen;
+                break;
+            case 'k':
+                p = new Twomen;
+                break;
+            default:
+                cout << "Wybrana plec nie jest poprawna!!!\n"
+                        "Sprobuj ponownie" << endl;
+        }
+    } while (p == nullptr);
     screenClear();
     p->create();
 }
@@ -90,9 +93,5 @@ void Tmenu::screenClear()
 
 Tmenu::~Tmenu()
 {
-    if (p != nullptr)
-    {
-        delete p;
-        p = nullptr;
-    }
+    delete p;
 }

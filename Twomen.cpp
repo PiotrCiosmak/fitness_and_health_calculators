@@ -57,51 +57,6 @@ Twomen::Twomen(std::string firstName, std::string lastName, int age, double heig
     this->act = act;
 }
 
-void Twomen::create()
-{
-    cout << "Podaj swoje imie:";
-    cin >> firstName;
-    cout << "Podaj swoje nazwisko:";
-    cin >> lastName;
-    cout << "Podaj swoj wiek:";
-    cin >> age;
-    cout << "Podaj swoj wzrost (cm):";
-    cin >> height;
-    cout << "Podaj swoja wage (kg):";
-    cin >> weight;
-
-    char tmp;
-    cout << "Wybierz swoj poziom aktywnosci fizycznej\n"
-            "1 - Znikoma (brak cwiczen, praca siedzaca, szkola)\n"
-            "2 - Bardzo mala (cwiczenia raz na tydzien, praca lekka)\n"
-            "3 - Umiarkowana (cwiczenia 2 razy w tygodniu - sredniej intensywnosci)\n"
-            "4 - Duza (dosc ciezki trening kilka razy w tygodniu)\n"
-            "5 - Bardzo duza (przynajmiej 4 ciezkie treningi w tygodniu, praca fizyczna)\n"
-            "Wybieram:";
-    cin >> tmp;
-    switch (tolower(tmp))
-    {
-        case '1':
-            act = Tperson::sedentary;
-            break;
-        case '2':
-            act = Tperson::light;
-            break;
-        case '3':
-            act = Tperson::active;
-            break;
-        case '4':
-            act = Tperson::veryActive;
-            break;
-        case '5':
-            act = Tperson::extraActive;
-            break;
-        default:
-            cout << "Wybrano bledny poziom aktywnosci fizycznej!!!";
-            exit(-1);
-    }
-}
-
 void Twomen::calculateBMI()
 {
     bmi = weight / ((height / 100) * (height / 100));
@@ -222,16 +177,6 @@ void Twomen::calculateAvgCalorie()
     }
     cout << "Srednie zapotrzebowanie kaloryczne dla kobiet wynosi: " << fixed << setprecision(0) << sum / counter << endl;
     file.close();
-}
-
-string Twomen::getFirstName()
-{
-    return firstName;
-}
-
-std::string Twomen::getLastName()
-{
-    return lastName;
 }
 
 void Twomen::saveToFileBMI()
