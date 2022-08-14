@@ -62,3 +62,16 @@ std::string Tperson::getLastName()
 {
     return lastName;
 }
+
+int Tperson::getCalorie()
+{
+    if (calorie == 0)
+    {
+        cout << "Najpierw musisz obliczyc swoje zapotrzebowanie kaloryczne" << endl;
+        return 0;
+    }
+    else
+    {
+        return calorie;
+    }
+}

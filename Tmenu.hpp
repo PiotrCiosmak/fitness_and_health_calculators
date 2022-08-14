@@ -22,8 +22,9 @@ public:
     static void screenClear();
 
     ~Tmenu();
+
 private:
-    Tperson *p = nullptr;
+    Tperson *person = nullptr;
 };
 
 

@@ -27,31 +27,31 @@ void Tmenu::startMenuSelection()
         switch (tolower(option))
         {
             case 'm':
-                p = new Tmen;
+                person = new Tmen;
                 break;
             case 'k':
-                p = new Twomen;
+                person = new Twomen;
                 break;
             default:
                 cout << "Wybrana plec nie jest poprawna!!!\n"
                         "Sprobuj ponownie" << endl;
         }
-    } while (p == nullptr);
+    } while (person == nullptr);
     screenClear();
-    p->create();
+    person->create();
 }
 
 void Tmenu::drawMenu()
 {
     screenClear();
 
-    cout << "Zalogowany jako: " << p->getFirstName() << ' ' << p->getLastName() <<
+    cout << "Zalogowany jako: " << person->getFirstName() << ' ' << person->getLastName() <<
          "\n---MENU---\n"
          "1. Oblicz swoje BMI\n"
          "2. Oblicz swoje zapotrzebowanie kaloryczne\n"
-         //Oblicz swoje makro składniki
-         "3. Pokaz srednie BMI\n"
-         "4. Pokaz srednie zapotrzebowanie kaloryczne\n"
+         "3. Oblicz swoje makroskladniki\n"
+         "4. Pokaz srednie BMI\n"
+         "5. Pokaz srednie zapotrzebowanie kaloryczne\n"
          "0. Zakoncz prace programu\n"
          "Wybieram:" << flush;
 }
@@ -63,16 +63,19 @@ void Tmenu::menuSelection()
     switch (tolower(option))
     {
         case '1':
-            p->calculateBMI();
+            person->calculateBMI();
             break;
         case '2':
-            p->calculateCalorie();
+            person->calculateCalorie();
             break;
         case '3':
+            person->calculateMacronutrients();
+            break;
+        case '4':
             Tmen::calculateAvgBMI();
             Twomen::calculateAvgBMI();
             break;
-        case '4':
+        case '5':
             Tmen::calculateAvgCalorie();
             Twomen::calculateAvgCalorie();
             break;
@@ -93,5 +96,5 @@ void Tmenu::screenClear()
 
 Tmenu::~Tmenu()
 {
-    delete p;
+    delete person;
 }

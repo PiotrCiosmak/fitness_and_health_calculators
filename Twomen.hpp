@@ -22,6 +22,8 @@ public:
 
     static void calculateAvgCalorie();
 
+    void calculateMacronutrients() override;
+
     ~Twomen() override;
 
 private:

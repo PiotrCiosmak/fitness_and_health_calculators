@@ -16,9 +16,9 @@ public:
         sedentary, light, active, veryActive, extraActive
     };
 
-    enum diet
+    enum objective
     {
-        sport, keto, reductive, standard, vegan, vegetarian
+        weightLoss, conditionImprovment, massBulid
     };
 
     void create();
@@ -26,6 +26,8 @@ public:
     std::string getFirstName();
 
     std::string getLastName();
+
+    int getCalorie();
 
     virtual void calculateBMI() = 0;
 
@@ -51,7 +53,8 @@ protected:
     activity act;
     double bmi;
     int calorie;
-    diet dietType;
+    objective objective;
+    int estimatedAmountOfFat;
     int protein;
     int carbo;
     int fat;

@@ -203,6 +203,37 @@ void Twomen::saveToFileCalorie()
     file.close();
 }
 
+
+void Twomen::calculateMacronutrients()
+{
+    if (getCalorie() == 0)
+    {
+        return;
+    }
+    switch (objective)
+    {
+        case Tperson::weightLoss:
+            protein = static_cast<int>(calorie * 0.35 / 4);
+            fat = static_cast<int>(calorie * 0.15 / 9);
+            carbo = static_cast<int>(calorie * 0.50 / 9);
+            break;
+        case Tperson::conditionImprovment:
+            protein = static_cast<int>(calorie * 0.40 / 4);
+            fat = static_cast<int>(calorie * 0.20 / 9);
+            carbo = static_cast<int>(calorie * 0.40 / 9);
+            break;
+        case Tperson::massBulid:
+            protein = static_cast<int>(calorie * 0.50 / 4);
+            fat = static_cast<int>(calorie * 0.10 / 9);
+            carbo = static_cast<int>(calorie * 0.40 / 9);
+            break;
+    }
+    cout << calorie << " kcal / dzien\n"
+         << "Bialka: " << protein << " g\n"
+         << "Tluszcze: " << fat << " g\n"
+         << "Weglowodany: " << carbo << " g" << endl;
+}
+
 Twomen::~Twomen()
 {
     cout << "Dziala destruktor klasy Twomen\n";
