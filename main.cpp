@@ -1,7 +1,4 @@
-#include <iostream>
-#include "Tperson.hpp"
 #include "Tmenu.hpp"
-#include "Tmen.hpp"
 
 int main()
 {
@@ -14,5 +11,3 @@ int main()
         menu.menuSelection();
     }
 }
-
-//obliczanie makro składników

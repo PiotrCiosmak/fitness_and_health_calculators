@@ -2,7 +2,7 @@
 // Created by PiotrCiosmak on 09.08.2022.
 //
 
-#include "Twomen.hpp"
+#include "TMen.hpp"
 #include <string>
 #include <algorithm>
 #include <iomanip>
@@ -10,25 +10,27 @@
 
 using namespace std;
 
-Twomen::Twomen()
+TMen::TMen()
 {
     firstName = "Brak";
     lastName = "Brak";
     age = 0;
     height = 0;
     weight = 0;
-    act = Tperson::sedentary;
+    act = TPerson::sedentary;
 }
 
-Twomen::Twomen(std::string firstName, std::string lastName, int age, double height, double weight, activity act)
+TMen::TMen(string firstName, string lastName, int age, double height, double weight, activity act)
 {
     //fistName
-    this->firstName = toupper(firstName.at(0));
-    transform(firstName.begin() + 1, firstName.end(), this->firstName.begin() + 1, ::tolower);
+    firstName.at(0) = toupper(firstName.at(0));
+    transform(firstName.begin() + 1, firstName.end(), firstName.begin() + 1, ::tolower);
+    this->firstName = firstName;
 
     //lastName
-    this->lastName = toupper(lastName.at(0));
-    transform(lastName.begin() + 1, lastName.end(), this->lastName.begin() + 1, ::tolower);
+    lastName.at(0) = toupper(lastName.at(0));
+    transform(lastName.begin() + 1, lastName.end(), lastName.begin() + 1, ::tolower);
+    this->lastName = lastName;
 
     //age
     if (age < 2 || age > 120)
@@ -57,11 +59,11 @@ Twomen::Twomen(std::string firstName, std::string lastName, int age, double heig
     this->act = act;
 }
 
-void Twomen::calculateBMI()
+void TMen::calculateBMI()
 {
     bmi = weight / ((height / 100) * (height / 100));
     cout << "Wynik\n"
-            "BMI = " << setprecision(2) << bmi << "(";
+            "BMI = " << setprecision(2) << bmi << " (";
     if (age <= 35)
     {
         if (bmi < 16.0)
@@ -70,9 +72,9 @@ void Twomen::calculateBMI()
             cout << "wychudzenie";
         else if (bmi >= 17.0 && bmi <= 18.49)
             cout << "niedowaga";
-        else if (bmi >= 18.5 && bmi <= 23.99)
+        else if (bmi >= 18.5 && bmi <= 24.99)
             cout << "prawidlowa masa ciala";
-        else if (bmi >= 24.0 && bmi <= 29.99)
+        else if (bmi >= 25.0 && bmi <= 29.99)
             cout << "nadwaga";
         else if (bmi >= 30.0 && bmi <= 34.99)
             cout << "otylosc I stopnia";
@@ -89,9 +91,9 @@ void Twomen::calculateBMI()
             cout << "wychudzenie";
         else if (bmi >= 17.0 && bmi <= 18.49)
             cout << "niedowaga";
-        else if (bmi >= 18.5 && bmi <= 25.99)
+        else if (bmi >= 18.5 && bmi <= 26.99)
             cout << "prawidlowa masa ciala";
-        else if (bmi >= 26.0 && bmi <= 29.99)
+        else if (bmi >= 27.0 && bmi <= 29.99)
             cout << "nadwaga";
         else if (bmi >= 30.0 && bmi <= 34.99)
             cout << "otylosc I stopnia";
@@ -104,28 +106,28 @@ void Twomen::calculateBMI()
     saveToFileBMI();
 }
 
-void Twomen::calculateCalorie()
+void TMen::calculateCalorie()
 {
     double pal;
     switch (act)
     {
-        case Tperson::sedentary:
+        case TPerson::sedentary:
             pal = 1.2;
             break;
-        case Tperson::light:
+        case TPerson::light:
             pal = 1.4;
             break;
-        case Tperson::active:
+        case TPerson::active:
             pal = 1.6;
             break;
-        case Tperson::veryActive:
+        case TPerson::veryActive:
             pal = 1.8;
             break;
-        case Tperson::extraActive:
+        case TPerson::extraActive:
             pal = 2.0;
             break;
     }
-    calorie = static_cast<int>(655 + (9.6 * weight) + (1.8 * height) - (4.7 * age) * pal);
+    calorie = static_cast<int>(66 + (13.7 * weight) + (5 * height) - (6.8 * age) * pal);
     cout << "Wynik\n" <<
          "Aby utrzymac wage musisz spozywac " << calorie << " kalori dziennie\n" <<
          "Aby tracic 0.25 kg tygodniowo musisz spozywac " << setprecision(0) << fixed << 0.90 * calorie << " dzienie\n" <<
@@ -137,9 +139,9 @@ void Twomen::calculateCalorie()
     saveToFileCalorie();
 }
 
-void Twomen::calculateAvgBMI()
+void TMen::calculateAvgBMI()
 {
-    ifstream file("women_BMI_history.txt", ios::in);
+    ifstream file("men_BMI_history.txt", ios::in);
     if (!file)
     {
         cout << "Blad otwarcia pliku!!!";
@@ -154,13 +156,13 @@ void Twomen::calculateAvgBMI()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie BMI dla kobiet wynosi: " << fixed << setprecision(2) << sum / counter << endl;
+    cout << "Srednie BMI dla mezczyzn wynosi: " << fixed << setprecision(2) << sum / counter << endl;
     file.close();
 }
 
-void Twomen::calculateAvgCalorie()
+void TMen::calculateAvgCalorie()
 {
-    ifstream file("women_calorie_history.txt", ios::in);
+    ifstream file("men_calorie_history.txt", ios::in);
     if (!file)
     {
         cout << "Blad otwarcia pliku!!!";
@@ -175,13 +177,13 @@ void Twomen::calculateAvgCalorie()
         sum += stod(line.substr(line.rfind(' ')));
         counter++;
     }
-    cout << "Srednie zapotrzebowanie kaloryczne dla kobiet wynosi: " << fixed << setprecision(0) << sum / counter << endl;
+    cout << "Srednie zapotrzebowanie kaloryczne dla mezczyzn wynosi: " << fixed << setprecision(0) << sum / counter << endl;
     file.close();
 }
 
-void Twomen::saveToFileBMI()
+void TMen::saveToFileBMI()
 {
-    ofstream file("women_BMI_history.txt", ios::out | ios::app);
+    ofstream file("men_BMI_history.txt", ios::out | ios::app);
     if (!file)
     {
         cout << "Blad otwarcia pliku!!!";
@@ -191,9 +193,9 @@ void Twomen::saveToFileBMI()
     file.close();
 }
 
-void Twomen::saveToFileCalorie()
+void TMen::saveToFileCalorie()
 {
-    ofstream file("women_calorie_history.txt", ios::out | ios::app);
+    ofstream file("men_calorie_history.txt", ios::out | ios::app);
     if (!file)
     {
         cout << "Blad otwarcia pliku!!!";
@@ -203,8 +205,7 @@ void Twomen::saveToFileCalorie()
     file.close();
 }
 
-
-void Twomen::calculateMacronutrients()
+void TMen::calculateMacronutrients()
 {
     if (getCalorie() == 0)
     {
@@ -212,17 +213,17 @@ void Twomen::calculateMacronutrients()
     }
     switch (objective)
     {
-        case Tperson::weightLoss:
+        case TPerson::weightLoss:
             protein = static_cast<int>(calorie * 0.35 / 4);
             fat = static_cast<int>(calorie * 0.15 / 9);
             carbo = static_cast<int>(calorie * 0.50 / 9);
             break;
-        case Tperson::conditionImprovment:
+        case TPerson::conditionImprovment:
             protein = static_cast<int>(calorie * 0.40 / 4);
             fat = static_cast<int>(calorie * 0.20 / 9);
             carbo = static_cast<int>(calorie * 0.40 / 9);
             break;
-        case Tperson::massBulid:
+        case TPerson::massBulid:
             protein = static_cast<int>(calorie * 0.50 / 4);
             fat = static_cast<int>(calorie * 0.10 / 9);
             carbo = static_cast<int>(calorie * 0.40 / 9);
@@ -234,7 +235,7 @@ void Twomen::calculateMacronutrients()
          << "Weglowodany: " << carbo << " g" << endl;
 }
 
-Twomen::~Twomen()
+TMen::~TMen()
 {
-    cout << "Dziala destruktor klasy Twomen\n";
+    cout << "Dziala destruktor klasy TMen\n";
 }

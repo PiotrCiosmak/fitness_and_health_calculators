@@ -5,14 +5,14 @@
 #ifndef FITNESS_AND_HEALTH_CALCULATORS_TWOMEN_HPP
 #define FITNESS_AND_HEALTH_CALCULATORS_TWOMEN_HPP
 
-#include "Tperson.hpp"
+#include "TPerson.hpp"
 
-class Twomen final : public Tperson
+class TWomen final : public TPerson
 {
 public:
-    Twomen();
+    TWomen();
 
-    Twomen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
+    TWomen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
 
     void calculateBMI() override;
 
@@ -24,7 +24,7 @@ public:
 
     void calculateMacronutrients() override;
 
-    ~Twomen() override;
+    ~TWomen() override;
 
 private:
     void saveToFileBMI() override;

@@ -4,8 +4,8 @@
 
 #include "Tmenu.hpp"
 #include <iostream>
-#include "Tmen.hpp"
-#include "Twomen.hpp"
+#include "TMen.hpp"
+#include "TWomen.hpp"
 
 using namespace std;
 
@@ -27,10 +27,10 @@ void Tmenu::startMenuSelection()
         switch (tolower(option))
         {
             case 'm':
-                person = new Tmen;
+                person = new TMen;
                 break;
             case 'k':
-                person = new Twomen;
+                person = new TWomen;
                 break;
             default:
                 cout << "Wybrana plec nie jest poprawna!!!\n"
@@ -72,12 +72,12 @@ void Tmenu::menuSelection()
             person->calculateMacronutrients();
             break;
         case '4':
-            Tmen::calculateAvgBMI();
-            Twomen::calculateAvgBMI();
+            TMen::calculateAvgBMI();
+            TWomen::calculateAvgBMI();
             break;
         case '5':
-            Tmen::calculateAvgCalorie();
-            Twomen::calculateAvgCalorie();
+            TMen::calculateAvgCalorie();
+            TWomen::calculateAvgCalorie();
             break;
         case '0':
             cout << "Opuszczanie programu";

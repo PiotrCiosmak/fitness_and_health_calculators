@@ -3,4 +3,4 @@ project(fitness_and_health_calculators)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(fitness_and_health_calculators main.cpp Tperson.hpp Tperson.cpp Tmen.cpp Tmen.hpp Twomen.cpp Twomen.hpp Tmenu.cpp Tmenu.hpp)
+add_executable(fitness_and_health_calculators main.cpp TPerson.hpp TPerson.cpp TMen.cpp TMen.hpp TWomen.cpp TWomen.hpp Tmenu.cpp Tmenu.hpp)

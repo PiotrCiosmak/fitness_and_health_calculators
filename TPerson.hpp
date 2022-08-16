@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-class Tperson
+class TPerson
 {
 public:
     enum activity
@@ -35,9 +35,9 @@ public:
 
     virtual void calculateMacronutrients() = 0;
 
-    virtual ~Tperson()
+    virtual ~TPerson()
     {
-        std::cout << "Dziala destruktor klasy Tperson\n";
+        std::cout << "Dziala destruktor klasy TPerson\n";
     }
 
 protected:

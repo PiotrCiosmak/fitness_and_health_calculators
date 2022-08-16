@@ -5,15 +5,15 @@
 #ifndef FITNESS_AND_HEALTH_CALCULATORS_TMEN_HPP
 #define FITNESS_AND_HEALTH_CALCULATORS_TMEN_HPP
 
-#include "Tperson.hpp"
+#include "TPerson.hpp"
 #include <vector>
 
-class Tmen final : public Tperson
+class TMen final : public TPerson
 {
 public:
-    Tmen();
+    TMen();
 
-    Tmen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
+    TMen(std::string firstName, std::string lastName, int age, double height, double weight, activity act);
 
     void calculateBMI() override;
 
@@ -25,7 +25,7 @@ public:
 
     void calculateMacronutrients() override;
 
-    ~Tmen() override;
+    ~TMen() override;
 
 private:
     void saveToFileBMI() override;

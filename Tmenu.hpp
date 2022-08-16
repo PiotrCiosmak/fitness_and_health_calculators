@@ -5,7 +5,7 @@
 #ifndef FITNESS_AND_HEALTH_CALCULATORS_TMENU_HPP
 #define FITNESS_AND_HEALTH_CALCULATORS_TMENU_HPP
 
-#include "Tperson.hpp"
+#include "TPerson.hpp"
 
 class Tmenu
 {
@@ -24,7 +24,7 @@ public:
     ~Tmenu();
 
 private:
-    Tperson *person = nullptr;
+    TPerson *person = nullptr;
 };
 
 

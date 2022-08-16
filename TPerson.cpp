@@ -2,13 +2,13 @@
 // Created by PiotrCiosmak on 08.08.2022.
 //
 
-#include "Tperson.hpp"
+#include "TPerson.hpp"
 #include <string>
 #include <fstream>
 
 using namespace std;
 
-void Tperson::create()
+void TPerson::create()
 {
     cout << "Podaj swoje imie:";
     cin >> firstName;
@@ -33,19 +33,19 @@ void Tperson::create()
     switch (tolower(tmp))
     {
         case '1':
-            act = Tperson::sedentary;
+            act = TPerson::sedentary;
             break;
         case '2':
-            act = Tperson::light;
+            act = TPerson::light;
             break;
         case '3':
-            act = Tperson::active;
+            act = TPerson::active;
             break;
         case '4':
-            act = Tperson::veryActive;
+            act = TPerson::veryActive;
             break;
         case '5':
-            act = Tperson::extraActive;
+            act = TPerson::extraActive;
             break;
         default:
             cout << "Wybrano bledny poziom aktywnosci fizycznej!!!";
@@ -53,17 +53,17 @@ void Tperson::create()
     }
 }
 
-string Tperson::getFirstName()
+string TPerson::getFirstName()
 {
     return firstName;
 }
 
-std::string Tperson::getLastName()
+std::string TPerson::getLastName()
 {
     return lastName;
 }
 
-int Tperson::getCalorie()
+int TPerson::getCalorie()
 {
     if (calorie == 0)
     {
